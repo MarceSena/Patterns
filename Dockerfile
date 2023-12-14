@@ -25,6 +25,10 @@ RUN composer dump-autoload --optimize
 
 RUN chown -R www-data:www-data /var/www/html
 
+RUN chown -R www-data:www-data /var/www/html/public
+
+RUN chmod -R 777 /var/www/html/public
+
 RUN sed -i -e 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-available/000-default.conf
 
 EXPOSE 80

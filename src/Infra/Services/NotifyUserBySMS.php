@@ -36,10 +36,7 @@ class NotifyUserBySMS implements EmailObserverInterface
 
         $message = $service . $subject . $body . "<br> <br>";
 
-        if ($this->simulateFailure) {
-            echo $message;
-        }
-
+        echo $message;
 
         return true;
     }
